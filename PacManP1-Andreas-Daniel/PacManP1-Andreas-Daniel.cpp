@@ -51,11 +51,15 @@ void Setup() {
 		}
 	}
 
+	/// <summary>
+	/// Posicion de objectos en el mapa
+	/// </summary>
 	map[10][10] = TILES::POINT;
 	map[10][11] = TILES::POINT;
 	map[10][12] = TILES::POINT;
 	map[10][13] = TILES::POINT;
 
+	// - Dibujado de paredes en Horizonatal
 	map[10][0] = TILES::EMPTY;
 	map[11][0] = TILES::EMPTY;
 	map[12][0] = TILES::EMPTY;
@@ -67,6 +71,35 @@ void Setup() {
 	map[12][MAP_HORIZONTAL - 1] = TILES::EMPTY;
 	map[13][MAP_HORIZONTAL - 1] = TILES::EMPTY;
 	map[14][MAP_HORIZONTAL - 1] = TILES::EMPTY;
+
+	// - Dibujado de paredes en Vertical
+	map[0][55] = TILES::EMPTY;
+	map[0][56] = TILES::EMPTY;
+	map[0][57] = TILES::EMPTY;
+	map[0][58] = TILES::EMPTY;
+	map[0][59] = TILES::EMPTY;
+	map[0][60] = TILES::EMPTY;
+	map[0][61] = TILES::EMPTY;
+	map[0][62] = TILES::EMPTY;
+	map[0][63] = TILES::EMPTY;
+	map[0][64] = TILES::EMPTY;
+	map[0][65] = TILES::EMPTY;
+	
+	map[MAP_VERTICAL - 1][55] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][56] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][57] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][58] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][59] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][60] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][61] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][62] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][63] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][64] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][65] = TILES::EMPTY;
+
+
+
+
 
 	//Comprobacion de puntos totales
 	for (size_t i = 0; i < MAP_VERTICAL; i++)
