@@ -6,10 +6,10 @@
 #include <conio.h>
 
 
-#define MAP_VERTICAL 29
-#define MAP_HORIZONTAL 120
-#define PERSONAJE 'O'
-#define SALTOLINEA std::cout << std::endl; //Las macro pueden ejecutar lo que sea
+#define MAP_VERTICAL 29 //Contiene la cantidad de caracteres verticales (29)
+#define MAP_HORIZONTAL 120 //Contiene la cantidad de caracteres horizontales (120)
+#define PERSONAJE 'O' //Contiene el caracter para el personaje (0)
+#define SALTOLINEA std::cout << std::endl; //Introduce un salto de línea (std::cout << std::endl)
 
 /// <summary>
 /// Contiene los caracteres que se usaran en el mapa (EMPTY, WALL, POINT)
