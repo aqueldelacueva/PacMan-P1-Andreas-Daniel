@@ -181,6 +181,10 @@ void Logic() {
 	}
 	personaje_x_new = personaje_x_new % MAP_HORIZONTAL;
 
+	if (personaje_y_new < 0) {
+		personaje_y_new = MAP_VERTICAL - 1;
+	}
+	personaje_y_new = personaje_y_new % MAP_VERTICAL;
 
 	//Comprobamos si dentro del array hay dibujado WALL, si no lo hay puedo moverme, si lo hay no puedo y no hace nada
 	switch (map[personaje_y_new][personaje_x_new])
