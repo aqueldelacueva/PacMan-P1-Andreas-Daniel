@@ -57,11 +57,30 @@ void Setup() {
 	/// Posicion de objectos en el mapa
 	/// </summary>
 	map[12][10] = TILES::POINT;
-	map[12][11] = TILES::POINT;
 	map[12][12] = TILES::POINT;
-	map[12][13] = TILES::POINT;
+	map[12][14] = TILES::POINT;
+	map[12][16] = TILES::POINT;
+	map[12][18] = TILES::POINT;
+	map[12][20] = TILES::POINT;
 	
-	map[12][13] = TILES::POINT;
+	map[12][116] = TILES::POINT;
+	map[12][114] = TILES::POINT;
+	map[12][112] = TILES::POINT;
+	map[12][112] = TILES::POINT;
+	map[12][110] = TILES::POINT;
+	map[12][108] = TILES::POINT;
+	
+
+	map[2][61] = TILES::POINT;
+	map[3][59] = TILES::POINT;
+	map[4][61] = TILES::POINT;
+	map[5][59] = TILES::POINT;	
+	
+	map[25][61] = TILES::POINT;	
+	map[25][59] = TILES::POINT;	
+	map[26][61] = TILES::POINT;	
+	map[26][59] = TILES::POINT;	
+
 
 	// - Dibujado de paredes en Horizonatal
 	map[10][0] = TILES::EMPTY;
