@@ -350,6 +350,8 @@ int main()
 		
 		//Si la puntuación es la máxima, cerramos el juego
 		if (puntuacion_total == puntuacion_actual) {
+			
+			//Cambia el color cuando ganas
 			system("Color 06");
 			std::cout << "                                          ---HAS GANADO---";
 			run = false;
