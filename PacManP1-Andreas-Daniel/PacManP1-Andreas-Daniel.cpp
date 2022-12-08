@@ -201,9 +201,6 @@ void Setup() {
 
 
 
-
-
-
 	//Comprobacion de puntos totales
 	for (size_t i = 0; i < MAP_VERTICAL; i++)
 	{
@@ -343,7 +340,6 @@ void Draw() {
 /// <returns></returns>
 int main()
 {
-
 		Setup();
 		Draw();
 	while (run) {
@@ -354,6 +350,7 @@ int main()
 		
 		//Si la puntuación es la máxima, cerramos el juego
 		if (puntuacion_total == puntuacion_actual) {
+			system("Color 06");
 			std::cout << "                                          ---HAS GANADO---";
 			run = false;
 		}
