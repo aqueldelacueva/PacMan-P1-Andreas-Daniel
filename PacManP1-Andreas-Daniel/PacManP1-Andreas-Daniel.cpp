@@ -16,12 +16,20 @@ bool run = true;
 enum INPUT { QUIT, UP, DOWN, LEFT, RIGHT, UNKNOW };
 INPUT currentInput = INPUT::UNKNOW;
 
-//Definimos los ejes del personaje
+
+
+/// <summary>
+/// Definimos los ejes del personaje
+/// </summary>
 int personaje_x;
 int personaje_y;
 int puntuacion_actual = 0;
 int puntuacion_total;
 
+
+/// <summary>
+/// Configuracion del mapa en consola
+/// </summary>
 void Setup() {
 	//Posicion inicial del personaje
 	personaje_x = MAP_HORIZONTAL / 2;
@@ -74,6 +82,9 @@ void Setup() {
 }
 
 
+/// <summary>
+/// Configuracion de los inputs para mover el personaje
+/// </summary>
 void Input() {
 	char input;
 	std::cin >> input;
@@ -104,6 +115,11 @@ void Input() {
 	}
 }
 
+
+
+/// <summary>
+/// Parte logica para mover el personala por el mapa
+/// </summary>
 void Logic() {
 	int personaje_y_new = personaje_y;
 	int personaje_x_new = personaje_x;
@@ -148,6 +164,10 @@ void Logic() {
 	}
 }
 
+
+/// <summary>
+/// Dibujado en consola
+/// </summary>
 void Draw() {
 
 	//Limpiar la pantalla
@@ -171,6 +191,10 @@ void Draw() {
 }
 
 
+/// <summary>
+/// Ejecuta las diferentes partes en el orden definido
+/// </summary>
+/// <returns></returns>
 int main()
 {
 
