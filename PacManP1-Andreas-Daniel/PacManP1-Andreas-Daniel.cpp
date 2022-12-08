@@ -9,7 +9,7 @@
 #define MAP_HORIZONTAL 120
 #define PERSONAJE 'O'
 #define SALTOLINEA std::cout << std::endl; //Las macro pueden ejecutar lo que sea
-enum TILES { EMPTY = ' ', WALL = '#', POINT = '.' };
+enum TILES { EMPTY = ' ', WALL = '#', POINT = '*' };
 
 
 TILES map[MAP_VERTICAL][MAP_HORIZONTAL];//Creamos Array
@@ -56,10 +56,12 @@ void Setup() {
 	/// <summary>
 	/// Posicion de objectos en el mapa
 	/// </summary>
-	map[10][10] = TILES::POINT;
-	map[10][11] = TILES::POINT;
-	map[10][12] = TILES::POINT;
-	map[10][13] = TILES::POINT;
+	map[12][10] = TILES::POINT;
+	map[12][11] = TILES::POINT;
+	map[12][12] = TILES::POINT;
+	map[12][13] = TILES::POINT;
+	
+	map[12][13] = TILES::POINT;
 
 	// - Dibujado de paredes en Horizonatal
 	map[10][0] = TILES::EMPTY;
@@ -98,6 +100,56 @@ void Setup() {
 	map[MAP_VERTICAL - 1][63] = TILES::EMPTY;
 	map[MAP_VERTICAL - 1][64] = TILES::EMPTY;
 	map[MAP_VERTICAL - 1][65] = TILES::EMPTY;
+
+	// - Dibujado de pared central up
+	map[9][52] = TILES::WALL;
+	map[9][53] = TILES::WALL;
+	map[9][54] = TILES::WALL;
+	map[9][55] = TILES::WALL;
+	map[9][56] = TILES::WALL;
+	map[9][57] = TILES::WALL;
+	map[9][58] = TILES::WALL;
+	map[9][59] = TILES::WALL;
+	map[9][60] = TILES::WALL;
+	map[9][61] = TILES::WALL;
+	map[9][62] = TILES::WALL;
+	map[9][63] = TILES::WALL;
+	map[9][64] = TILES::WALL;
+	map[9][65] = TILES::WALL;
+	map[9][66] = TILES::WALL;
+	map[9][67] = TILES::WALL;
+	map[9][68] = TILES::WALL;
+
+	// - Dibujado de pared down
+	map[22][55] = TILES::WALL;
+	map[22][56] = TILES::WALL;
+	map[22][57] = TILES::WALL;
+	map[22][58] = TILES::WALL;
+	map[22][59] = TILES::WALL;
+	map[22][60] = TILES::WALL;
+	map[22][61] = TILES::WALL;
+	map[22][62] = TILES::WALL;
+	map[22][63] = TILES::WALL;
+	map[22][64] = TILES::WALL;
+	map[22][65] = TILES::WALL;
+
+	// - Dibujado de pareds lateral
+	map[22][55] = TILES::WALL;
+	map[23][55] = TILES::WALL;
+	map[24][55] = TILES::WALL;
+	map[25][55] = TILES::WALL;
+	map[26][55] = TILES::WALL;
+	map[27][55] = TILES::WALL;
+	map[28][55] = TILES::WALL;
+
+	map[22][65] = TILES::WALL;
+	map[23][65] = TILES::WALL;
+	map[24][65] = TILES::WALL;
+	map[25][65] = TILES::WALL;
+	map[26][65] = TILES::WALL;
+	map[27][65] = TILES::WALL;
+	map[28][65] = TILES::WALL;
+
 
 
 
