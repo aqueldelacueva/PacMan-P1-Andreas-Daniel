@@ -118,7 +118,7 @@ void Input() {
 
 
 /// <summary>
-/// Parte logica para mover el personala por el mapa
+/// Parte logica para mover el personaje por el mapa
 /// </summary>
 void Logic() {
 	int personaje_y_new = personaje_y;
@@ -142,7 +142,7 @@ void Logic() {
 		break;
 	}
 
-	//Compropbamos la coordenada por si teletransportamos al personaje
+	//Comprobamos la coordenada por si teletransportamos al personaje
 	if (personaje_x_new < 0) {
 		personaje_x_new = MAP_HORIZONTAL - 1;
 	}
@@ -198,14 +198,19 @@ void Draw() {
 int main()
 {
 
-	Setup();
-	Draw();
+		Setup();
+		Draw();
 	while (run) {
 
 		Input();
 		Logic();
 		Draw();
-
+		
+		//Si la puntuación es la máxima, cerramos el juego
+		if (puntuacion_total == puntuacion_actual) {
+			std::cout << "                                             HAS GANADO";
+			run = false;
+		}
 	}
 
 }
