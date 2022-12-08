@@ -3,6 +3,8 @@
 //using namespace std; con esto no hace falta escribir std::
 
 #include <iostream>
+#include <conio.h>
+
 #define MAP_VERTICAL 29
 #define MAP_HORIZONTAL 120
 #define PERSONAJE 'O'
@@ -119,8 +121,8 @@ void Setup() {
 /// Configuracion de los inputs para mover el personaje
 /// </summary>
 void Input() {
-	char input;
-	std::cin >> input;
+	char input = _getch();
+	//std::cin >> input;
 	switch (input) {
 	case 'w':
 	case 'W':
