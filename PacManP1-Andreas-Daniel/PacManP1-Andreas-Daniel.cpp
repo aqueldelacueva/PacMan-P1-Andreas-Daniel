@@ -5,27 +5,58 @@
 #include <iostream>
 #include <conio.h>
 
+
 #define MAP_VERTICAL 29
 #define MAP_HORIZONTAL 120
 #define PERSONAJE 'O'
 #define SALTOLINEA std::cout << std::endl; //Las macro pueden ejecutar lo que sea
+
+/// <summary>
+/// Contiene los caracteres que se usaran en el mapa (EMPTY, WALL, POINT)
+/// </summary>
 enum TILES { EMPTY = ' ', WALL = '#', POINT = '*' };
 
+/// <summary>
+/// Recoje las coordenadas del mapa ([MAP_VERTICAL], [MAP_HORIZONTAL])
+/// </summary>
+TILES map[MAP_VERTICAL][MAP_HORIZONTAL];
 
-TILES map[MAP_VERTICAL][MAP_HORIZONTAL];//Creamos Array
+/// <summary>
+/// Indica si seguimos ejecutando el juego (bool)
+/// </summary>
 bool run = true;
 
+/// <summary>
+/// Contiene los caracteres de control del personaje y juego
+/// (QUIT, UP, DOWN, LEFT, RIGHT, UNKNOW)
+/// </summary>
 enum INPUT { QUIT, UP, DOWN, LEFT, RIGHT, UNKNOW };
+
+/// <summary>
+/// Tecla pulsada (INPUT)
+/// </summary>
 INPUT currentInput = INPUT::UNKNOW;
 
 
 
 /// <summary>
-/// Definimos los ejes del personaje
+/// Posicion Final personaje en eje x (int)
 /// </summary>
 int personaje_x;
+
+/// <summary>
+/// Posicion Final personaje en eje y (int)
+/// </summary>
 int personaje_y;
+
+/// <summary>
+/// Acumula la puntuación acumulada (int)
+/// </summary>
 int puntuacion_actual = 0;
+
+/// <summary>
+/// Acumula la puntuación total en partida (int)
+/// </summary>
 int puntuacion_total;
 
 
@@ -33,6 +64,7 @@ int puntuacion_total;
 /// Configuracion del mapa en consola
 /// </summary>
 void Setup() {
+
 	//Posicion inicial del personaje
 	personaje_x = MAP_HORIZONTAL / 2;
 	personaje_y = MAP_VERTICAL / 2;
@@ -53,9 +85,7 @@ void Setup() {
 		}
 	}
 
-	/// <summary>
-	/// Posicion de objectos en el mapa
-	/// </summary>
+	// - Posicion de objectos en el mapa
 	map[12][10] = TILES::POINT;
 	map[12][12] = TILES::POINT;
 	map[12][14] = TILES::POINT;
@@ -152,7 +182,7 @@ void Setup() {
 	map[22][64] = TILES::WALL;
 	map[22][65] = TILES::WALL;
 
-	// - Dibujado de pareds lateral
+	// - Dibujado de paredes laterales
 	map[22][55] = TILES::WALL;
 	map[23][55] = TILES::WALL;
 	map[24][55] = TILES::WALL;
@@ -192,7 +222,7 @@ void Setup() {
 /// Configuracion de los inputs para mover el personaje
 /// </summary>
 void Input() {
-	//con _getch() capturamos la tecla pulsada como char y la pasamos a input
+	//Capturamos la tecla pulsada como char y la pasamos a input (_getch())
 	char input = _getch();
 	switch (input) {
 	case 'w':
@@ -227,7 +257,13 @@ void Input() {
 /// Parte logica para mover el personaje por el mapa
 /// </summary>
 void Logic() {
+	/// <summary>
+	/// Posicion temporal del jugador en eje y
+	/// </summary>
 	int personaje_y_new = personaje_y;
+	/// <summary>
+	/// Posicion temporal del jugador en eje x
+	/// </summary>
 	int personaje_x_new = personaje_x;
 	switch (currentInput)
 	{
