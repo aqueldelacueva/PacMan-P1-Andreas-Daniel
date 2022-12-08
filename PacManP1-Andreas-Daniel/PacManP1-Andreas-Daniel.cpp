@@ -247,7 +247,7 @@ int main()
 		
 		//Si la puntuación es la máxima, cerramos el juego
 		if (puntuacion_total == puntuacion_actual) {
-			std::cout << "                                          ¡¡¡HAS GANADO!!!";
+			std::cout << "                                          ---HAS GANADO---";
 			run = false;
 		}
 	}
