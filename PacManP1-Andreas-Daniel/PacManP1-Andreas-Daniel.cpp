@@ -121,8 +121,8 @@ void Setup() {
 /// Configuracion de los inputs para mover el personaje
 /// </summary>
 void Input() {
+	//con _getch() capturamos la tecla pulsada como char y la pasamos a input
 	char input = _getch();
-	//std::cin >> input;
 	switch (input) {
 	case 'w':
 	case 'W':
