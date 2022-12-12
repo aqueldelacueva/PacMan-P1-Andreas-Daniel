@@ -4,12 +4,14 @@
 
 #include <iostream>
 #include <conio.h>
+#include <windows.h>
 
 
 #define MAP_VERTICAL 29
 #define MAP_HORIZONTAL 120
 #define PERSONAJE 'O'
 #define SALTOLINEA std::cout << std::endl; //Las macro pueden ejecutar lo que sea
+//#define color SetConsoleTextAttribute
 
 /// <summary>
 /// Contiene los caracteres que se usaran en el mapa (EMPTY, WALL, POINT)
@@ -65,6 +67,8 @@ int puntuacion_total;
 /// </summary>
 void Setup() {
 
+
+
 	//Posicion inicial del personaje
 	personaje_x = MAP_HORIZONTAL / 2;
 	personaje_y = MAP_VERTICAL / 2;
@@ -84,6 +88,7 @@ void Setup() {
 			}
 		}
 	}
+
 
 	// - Posicion de objectos en el mapa
 	map[12][10] = TILES::POINT;
@@ -202,6 +207,7 @@ void Setup() {
 
 
 	//Comprobacion de puntos totales
+	// - Configuracion de color para los caracteres
 	for (size_t i = 0; i < MAP_VERTICAL; i++)
 	{
 		for (size_t j = 0; j < MAP_HORIZONTAL; j++)
@@ -210,8 +216,10 @@ void Setup() {
 			{
 				puntuacion_total++;
 			}
+
 		}
 	}
+
 }
 
 
@@ -327,6 +335,13 @@ void Draw() {
 			else {
 				std::cout << (char)map[i][j];
 			}
+
+
+			/*if (map[i][j] == TILES::WALL) {
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
+			}
+			std::cout << map[i][j];*/
+
 		}
 		SALTOLINEA
 	}
@@ -340,6 +355,13 @@ void Draw() {
 /// <returns></returns>
 int main()
 {
+	/*HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 1);
+
+	std::cout << "#";*/
+
+	
+
 		Setup();
 		Draw();
 	while (run) {
